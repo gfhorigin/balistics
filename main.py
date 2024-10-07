@@ -41,7 +41,7 @@ class Balistic:
         self.l = round(self.Vx * self.t, 2)
 
     def Target(self):
-        t = round((self.Vy + (self.Vy ** 2 + 4 * 4.9 * self.h-self.targetH)**0.5) / 9.8, 2)
+        t = round((self.Vy + (self.Vy ** 2 + 4 * 4.9 * (self.h-self.targetH))**0.5) / 9.8, 2)
         self.targetLenght = round(self.Vx * t, 2)
 
     def __str__(self):
@@ -58,8 +58,8 @@ class Balistic:
 
 
 
-bal = Balistic(5.23,round(0.8+0.75/2,2),0, 0)
-bal.SpeedX()
+bal = Balistic(4.21, round(( 0.9+0.85 ) / 2,2),0,0.2)#5.23,round((0.8+0.75)/2,2),0, 0.2
+bal.SpeedX()#4.21, round(( 0.9+0.85 ) / 2,2),0,0.2
 bal.SpeedY()
 bal.Time()
 bal.Lenght()
